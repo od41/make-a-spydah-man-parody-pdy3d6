@@ -1,16 +1,134 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Spayda Man Theme Variables */
+:root {
+  /* Primary Colors */
+  --color-primary: #FF6B35;
+  --color-secondary: #004E89;
+  --color-accent: #F7931E;
+  --color-light: #F5F5F5;
+  --color-dark: #1A1A1A;
+  --color-success: #00D084;
+  --color-warning: #FFB800;
+  
+  /* Typography */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: Arial, Helvetica, sans-serif;
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  
+  /* Animation */
+  --animation-fast: 200ms;
+  --animation-normal: 300ms;
+  --animation-slow: 500ms;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#root { 
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-light) 0%, #FFFFFF 100%);
+  transition: background-color var(--animation-normal) var(--animation-easing);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Base Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--color-secondary);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: var(--color-dark);
+}
+
+p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Text Sizing */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    padding: 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus Visible Styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+button,
+a {
+  transition: all var(--animation-normal) var(--animation-easing);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
 }
