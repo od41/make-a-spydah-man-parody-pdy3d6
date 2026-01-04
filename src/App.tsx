@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Button } from '@/components/ui/button'
-import { SPAYDA_MAN_THEME, SPAYDA_MAN_TEXT } from '@/utils/constants'
+import SpaydaImage from '@/components/SpaydaImage'
+import { SPAYDA_MAN_THEME, SPAYDA_MAN_TEXT, DEFAULT_IMAGE_URL } from '@/utils/constants'
 
 function App() {
   const [message, setMessage] = useState("")
@@ -15,6 +16,13 @@ function App() {
         <h2 className="hero-subheading text-2xl text-secondary font-semibold">
           {SPAYDA_MAN_TEXT.tagline}
         </h2>
+        
+        <SpaydaImage
+          src={DEFAULT_IMAGE_URL}
+          alt="Spayda Man - The Friendly Neighborhood Web Hero spinning webs of awesome content"
+          title="Spayda Man Hero Image"
+        />
+        
         <p 
           className="text-lg font-medium max-w-2xl px-4"
           style={{ color: SPAYDA_MAN_THEME.colors.accent }}
