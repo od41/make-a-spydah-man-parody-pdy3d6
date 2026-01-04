@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { Button } from '@/components/ui/button'
 import SpaydaImage from '@/components/SpaydaImage'
+import SpeechBubble from '@/components/SpeechBubble'
 import { SPAYDA_MAN_THEME, SPAYDA_MAN_TEXT, DEFAULT_IMAGE_URL } from '@/utils/constants'
 
 function App() {
@@ -16,6 +17,12 @@ function App() {
         <h2 className="hero-subheading text-2xl text-secondary font-semibold">
           {SPAYDA_MAN_TEXT.tagline}
         </h2>
+        
+        <SpeechBubble
+          text="Hey there! I'm Spayda Man, ready to spin some awesome web content!"
+          position="top"
+          animated={true}
+        />
         
         <SpaydaImage
           src={DEFAULT_IMAGE_URL}
