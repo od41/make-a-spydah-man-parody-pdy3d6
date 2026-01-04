@@ -33,7 +33,7 @@ function App() {
         
         <Button 
           onClick={() => setMessage(SPAYDA_MAN_TEXT.ctaButton)}
-          className="mt-4 px-8 py-3 text-lg font-semibold"
+          className="mt-4 px-8 py-3 text-lg font-semibold hover:opacity-90 transition-opacity"
           style={{
             backgroundColor: SPAYDA_MAN_THEME.colors.primary,
             color: 'white'
@@ -55,10 +55,11 @@ function App() {
           {Object.entries(SPAYDA_MAN_TEXT.features).map(([key, value]) => (
             <div
               key={key}
-              className="p-6 rounded-lg border-2 transition-all hover:shadow-lg"
+              className="p-6 rounded-lg border-2 transition-all hover:shadow-lg focus-within:outline-2 focus-within:outline-offset-2"
               style={{
                 borderColor: SPAYDA_MAN_THEME.colors.accent,
-                backgroundColor: SPAYDA_MAN_THEME.colors.light
+                backgroundColor: SPAYDA_MAN_THEME.colors.light,
+                outlineColor: SPAYDA_MAN_THEME.colors.primary
               }}
             >
               <p className="font-semibold" style={{ color: SPAYDA_MAN_THEME.colors.primary }}>

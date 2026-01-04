@@ -16,12 +16,14 @@
   min-height: 100vh;
   padding: var(--spacing-xl) var(--spacing-lg);
   gap: var(--spacing-xl);
+  width: 100%;
 }
 
 .hero-heading {
   color: var(--color-primary);
   margin-bottom: var(--spacing-md);
   animation: fadeInDown 0.6s var(--animation-easing);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subheading {
@@ -37,6 +39,7 @@
   justify-content: center;
   width: 100%;
   margin: var(--spacing-lg) 0;
+  animation: fadeInUp 0.8s var(--animation-easing) 0.4s both;
 }
 
 .spayda-page-content {
@@ -86,7 +89,7 @@
 }
 
 .spayda-image:focus-visible {
-  outline: 3px solid #FF6B35;
+  outline: 3px solid var(--color-primary);
   outline-offset: 4px;
   border-radius: 12px;
 }
@@ -130,7 +133,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 12px 12px 12px;
-  border-color: transparent transparent #FF6B35 transparent;
+  border-color: transparent transparent var(--color-primary) transparent;
 }
 
 .speech-bubble-bottom {
@@ -142,7 +145,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-width: 12px 12px 0 12px;
-  border-color: #FF6B35 transparent transparent transparent;
+  border-color: var(--color-primary) transparent transparent transparent;
 }
 
 .speech-bubble-left {
@@ -154,7 +157,7 @@
   top: 50%;
   transform: translateY(-50%);
   border-width: 12px 12px 12px 0;
-  border-color: transparent #FF6B35 transparent transparent;
+  border-color: transparent var(--color-primary) transparent transparent;
 }
 
 .speech-bubble-right {
@@ -166,7 +169,7 @@
   top: 50%;
   transform: translateY(-50%);
   border-width: 12px 0 12px 12px;
-  border-color: transparent transparent transparent #FF6B35;
+  border-color: transparent transparent transparent var(--color-primary);
 }
 
 .speech-bubble-center {
@@ -264,10 +267,19 @@
   .speech-bubble-text {
     font-size: 0.9rem;
   }
+
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-section {
+    min-height: auto;
     padding: var(--spacing-lg) var(--spacing-sm);
     gap: var(--spacing-md);
   }
@@ -300,5 +312,38 @@
 
   .speech-bubble-tail {
     border-width: 8px !important;
+  }
+
+  .hero-heading {
+    font-size: 1.875rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.25rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .hero-section {
+    padding: var(--spacing-md) var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+
+  .hero-subheading {
+    font-size: 1rem;
+  }
+
+  .speech-bubble {
+    max-width: 95%;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .speech-bubble-text {
+    font-size: 0.8rem;
   }
 }
