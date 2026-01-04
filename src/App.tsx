@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Button } from '@/components/ui/button'
-import SpaydaImage from '@/components/SpaydaImage'
-import SpeechBubble from '@/components/SpeechBubble'
-import { SPAYDA_MAN_THEME, SPAYDA_MAN_TEXT, DEFAULT_IMAGE_URL } from '@/utils/constants'
+import SpaydaPage from '@/components/SpaydaPage'
+import { SPAYDA_MAN_THEME, SPAYDA_MAN_TEXT } from '@/utils/constants'
 
 function App() {
   const [message, setMessage] = useState("")
@@ -18,16 +17,11 @@ function App() {
           {SPAYDA_MAN_TEXT.tagline}
         </h2>
         
-        <SpeechBubble
-          text="Hey there! I'm Spayda Man, ready to spin some awesome web content!"
-          position="top"
-          animated={true}
-        />
-        
-        <SpaydaImage
-          src={DEFAULT_IMAGE_URL}
-          alt="Spayda Man - The Friendly Neighborhood Web Hero spinning webs of awesome content"
-          title="Spayda Man Hero Image"
+        {/* SpaydaPage combines SpaydaImage and SpeechBubble */}
+        <SpaydaPage
+          speechText="Hey there! I'm Spayda Man, ready to spin some awesome web content!"
+          speechPosition="top"
+          speechAnimated={true}
         />
         
         <p 
